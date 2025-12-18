@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blank9485 | about</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #020203;
+            --accent-blue: #3b82f6;
+            --accent-purple: #8b5cf6;
+            --card-bg: rgba(255, 255, 255, 0.03);
+            --card-border: rgba(255, 255, 255, 0.08);
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: #f8fafc;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            overflow-x: hidden;
+        }
+
+        .glass-card {
+            background: var(--card-bg);
+            backdrop-filter: blur(12px);
+            border: 1px solid var(--card-border);
+            border-radius: 24px;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .glass-card:hover {
+            border-color: rgba(59, 130, 246, 0.4);
+            background: rgba(255, 255, 255, 0.05);
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px -20px rgba(0, 0, 0, 0.5);
+        }
+
+        .text-gradient {
+            background: linear-gradient(135deg, #fff 0%, #94a3b8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .tiktok-gradient {
+            background: linear-gradient(45deg, #ff0050, #00f2ea);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .glow {
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(59, 130, 246, 0.15) 0%, transparent 70%);
+            z-index: -1;
+            filter: blur(50px);
+        }
+
+        .stats-number {
+            font-weight: 800;
+            letter-spacing: -1px;
+        }
+
+        .pfp-ring {
+            position: relative;
+            padding: 4px;
+            background: linear-gradient(to bottom right, var(--accent-blue), var(--accent-purple));
+            border-radius: 30px;
+        }
+
+        .pfp-ring img {
+            border-radius: 26px;
+            background: var(--bg-color);
+        }
+
+        .nav-blur {
+            background: rgba(2, 2, 3, 0.7);
+            backdrop-filter: saturate(180%) blur(20px);
+        }
+    </style>
+</head>
+<body class="selection:bg-blue-500/30">
+
+    <div class="glow top-[-100px] left-[-100px]"></div>
+    <div class="glow bottom-[-100px] right-[-100px]"></div>
+
+    <nav class="fixed top-0 w-full z-50 nav-blur border-b border-white/5">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+            <span class="font-bold text-xl tracking-tighter">BLANK</span>
+            <div class="flex gap-6 text-sm font-medium text-slate-400">
+                <a href="https://www.tiktok.com/@blank9485" class="hover:text-white transition-colors"><i class="fab fa-tiktok mr-1"></i> TikTok</a>
+                <a href="https://github.com/Blank94855" class="hover:text-white transition-colors"><i class="fab fa-github mr-1"></i> GitHub</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-6xl mx-auto px-6 pt-32 pb-20">
+        
+        <header class="flex flex-col md:flex-row items-center gap-10 mb-20">
+            <div class="pfp-ring w-40 h-40 shrink-0 shadow-2xl shadow-blue-500/20">
+                <img src="https://i.ibb.co/Pz0cVxMr/pfp.jpg" alt="Blank" class="w-full h-full object-cover" onerror="this.src='https://ui-avatars.com/api/?name=B&background=3b82f6&color=fff'">
+            </div>
+            <div class="text-center md:text-left">
+                <h1 class="text-5xl md:text-7xl font-extrabold text-gradient tracking-tight mb-4 leading-tight">Blank.</h1>
+                <p class="text-lg md:text-xl text-slate-400 max-w-2xl leading-relaxed">
+                    hello!
+                </p>
+            </div>
+        </header>
+
+        <section class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-20">
+            <div class="glass-card p-8 flex flex-col items-center justify-center text-center">
+                <div class="tiktok-gradient text-4xl stats-number mb-1">35M+</div>
+                <div class="text-xs uppercase font-bold tracking-widest text-slate-500">TikTok Views</div>
+            </div>
+            <div class="glass-card p-8 flex flex-col items-center justify-center text-center">
+                <div class="text-4xl stats-number mb-1 text-white">85K+</div>
+                <div class="text-xs uppercase font-bold tracking-widest text-slate-500">Followers</div>
+            </div>
+            <div class="glass-card p-8 flex flex-col items-center justify-center text-center">
+                <div class="text-4xl stats-number mb-1 text-white">7M+</div>
+                <div class="text-xs uppercase font-bold tracking-widest text-slate-500">Total Likes</div>
+            </div>
+        </section>
+
+        <section id="communities" class="mb-20">
+            <div class="flex items-center gap-4 mb-10">
+                <h2 class="text-3xl font-bold">Communities I Moderate</h2>
+                <div class="h-px flex-1 bg-white/10"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <a href="https://www.reddit.com/r/Magisk/s/tE4kuEoWqt" target="_blank" class="glass-card p-6 flex flex-col h-full">
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="w-10 h-10 bg-orange-500/10 rounded-xl flex items-center justify-center">
+                            <i class="fab fa-reddit-alien text-orange-500 text-xl"></i>
+                        </div>
+                        <span class="text-[10px] font-bold bg-white/5 px-2 py-1 rounded text-slate-400">30k+ USERS</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 text-white">r/magisk</h3>
+                    <p class="text-sm text-slate-400 leading-relaxed mb-6">the unofficial Magisk subreddit for Android root and systemless modules.</p>
+                    <div class="mt-auto text-xs font-bold text-orange-500 flex items-center gap-2 uppercase tracking-widest">View Subreddit <i class="fas fa-arrow-right text-[10px]"></i></div>
+                </a>
+
+                <a href="https://discord.gg/ypW6AU5Ymh" target="_blank" class="glass-card p-6 flex flex-col h-full">
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="w-10 h-10 bg-blue-500/10 rounded-xl flex items-center justify-center">
+                            <i class="fab fa-discord text-blue-500 text-xl"></i>
+                        </div>
+                        <span class="text-[10px] font-bold bg-white/5 px-2 py-1 rounded text-slate-400">100+ MEMBERS</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 text-white">Techcore</h3>
+                    <p class="text-sm text-slate-400 leading-relaxed mb-6"> tech community made by me for tech support, chatting and etc..</p>
+                    <div class="mt-auto text-xs font-bold text-blue-500 flex items-center gap-2 uppercase tracking-widest">Join Discord <i class="fas fa-arrow-right text-[10px]"></i></div>
+                </a>
+
+                <a href="https://discord.gg/eJPBCfPzca" target="_blank" class="glass-card p-6 flex flex-col h-full">
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="w-10 h-10 bg-purple-500/10 rounded-xl flex items-center justify-center">
+                            <i class="fab fa-discord text-purple-500 text-xl"></i>
+                        </div>
+                        <span class="text-[10px] font-bold bg-white/5 px-2 py-1 rounded text-slate-400">100+ MEMBERS</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 text-white">Brick 1100</h3>
+                    <p class="text-sm text-slate-400 leading-relaxed mb-6">Retro phone simulator.</p>
+                    <div class="mt-auto text-xs font-bold text-purple-500 flex items-center gap-2 uppercase tracking-widest">Join Discord <i class="fas fa-arrow-right text-[10px]"></i></div>
+                </a>
+
+                <a href="https://discord.gg/UN9MfRquCs" target="_blank" class="glass-card p-6 flex flex-col h-full">
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="w-10 h-10 bg-emerald-500/10 rounded-xl flex items-center justify-center">
+                            <i class="fab fa-discord text-emerald-500 text-xl"></i>
+                        </div>
+                        <span class="text-[10px] font-bold bg-white/5 px-2 py-1 rounded text-slate-400">20+ MEMBERS</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 text-white">A14 stuffs</h3>
+                    <p class="text-sm text-slate-400 leading-relaxed mb-6">Retarted group for Galaxy A14 development</p>
+                    <div class="mt-auto text-xs font-bold text-emerald-500 flex items-center gap-2 uppercase tracking-widest">Join Discord <i class="fas fa-arrow-right text-[10px]"></i></div>
+                </a>
+            </div>
+        </section>
+
+        <section id="projects" class="mb-20">
+            <div class="flex items-center gap-4 mb-10">
+                <h2 class="text-3xl font-bold">Projects</h2>
+                <div class="h-px flex-1 bg-white/10"></div>
+            </div>
+            
+            <div class="glass-card p-8 md:p-12 relative overflow-hidden group">
+                <div class="absolute top-0 right-0 p-10 opacity-[0.03] group-hover:opacity-10 transition-opacity">
+                    <i class="fas fa-terminal text-[120px] text-white"></i>
+                </div>
+                <div class="relative z-10">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="w-12 h-12 bg-white rounded-2xl flex items-center justify-center">
+                            <i class="fas fa-cat text-black text-2xl"></i>
+                        </div>
+                        <h3 class="text-3xl font-bold text-white">CatNap</h3>
+                    </div>
+                    <p class="text-lg text-slate-400 mb-8 max-w-2xl leading-relaxed">
+                        Modified fastfetch theme for Termux
+                    </p>
+                    <a href="https://github.com/Blank94855/termux-catnap-theme" target="_blank" class="inline-flex items-center gap-3 px-6 py-3 bg-white text-black font-bold rounded-2xl hover:bg-slate-200 transition-colors uppercase text-sm tracking-tight">
+                        <i class="fab fa-github text-lg"></i> View Repository
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="border-t border-white/5 py-12 text-center">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="flex justify-center gap-6 mb-8 text-2xl text-slate-400">
+                <a href="https://www.tiktok.com/@blank9485" class="hover:text-white transition-colors"><i class="fab fa-tiktok"></i></a>
+                <a href="https://github.com/Blank94855" class="hover:text-white transition-colors"><i class="fab fa-github"></i></a>
+            </div>
+            <p class="text-sm text-slate-500 font-medium tracking-tight">© Site made with Gemini 3.0 pro.</p>
+        </div>
+    </footer>
+
+</body>
+                                                         </html>
