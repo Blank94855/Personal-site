@@ -1,226 +1,214 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blank9485 | about</title>
+    <title>Blank9485 | Home</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-color: #020203;
-            --accent-blue: #3b82f6;
-            --accent-purple: #8b5cf6;
-            --card-bg: rgba(255, 255, 255, 0.03);
-            --card-border: rgba(255, 255, 255, 0.08);
+            --bg-dark: #09090b;
+            --card-dark: #18181b;
+            --border-dark: #27272a;
         }
-
+        
         body {
-            background-color: var(--bg-color);
-            color: #f8fafc;
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            overflow-x: hidden;
+            background-color: var(--bg-dark);
+            background-image: radial-gradient(at 0% 0%, rgba(56, 189, 248, 0.03) 0px, transparent 50%),
+                            radial-gradient(at 100% 0%, rgba(139, 92, 246, 0.03) 0px, transparent 50%);
+            color: #fafafa;
+            font-family: 'Inter', sans-serif;
         }
 
-        .glass-card {
-            background: var(--card-bg);
-            backdrop-filter: blur(12px);
-            border: 1px solid var(--card-border);
-            border-radius: 24px;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        .font-grotesk {
+            font-family: 'Space Grotesk', sans-serif;
         }
 
-        .glass-card:hover {
-            border-color: rgba(59, 130, 246, 0.4);
-            background: rgba(255, 255, 255, 0.05);
-            transform: translateY(-5px);
-            box-shadow: 0 20px 40px -20px rgba(0, 0, 0, 0.5);
+        .noise-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 50;
+            opacity: 0.03;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='1'/%3E%3C/svg%3E");
         }
 
-        .text-gradient {
-            background: linear-gradient(135deg, #fff 0%, #94a3b8 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+        .bento-card {
+            background-color: rgba(24, 24, 27, 0.6);
+            border: 1px solid var(--border-dark);
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
         }
 
-        .tiktok-gradient {
-            background: linear-gradient(45deg, #ff0050, #00f2ea);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+        .bento-card:hover {
+            border-color: #52525b;
+            transform: translateY(-2px);
+            background-color: rgba(39, 39, 42, 0.8);
         }
 
-        .glow {
-            position: absolute;
-            width: 300px;
-            height: 300px;
-            background: radial-gradient(circle, rgba(59, 130, 246, 0.15) 0%, transparent 70%);
-            z-index: -1;
-            filter: blur(50px);
+        .text-glow {
+            text-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
         }
-
-        .stats-number {
-            font-weight: 800;
-            letter-spacing: -1px;
-        }
-
-        .pfp-ring {
-            position: relative;
-            padding: 4px;
-            background: linear-gradient(to bottom right, var(--accent-blue), var(--accent-purple));
-            border-radius: 30px;
-        }
-
-        .pfp-ring img {
-            border-radius: 26px;
-            background: var(--bg-color);
-        }
-
-        .nav-blur {
-            background: rgba(2, 2, 3, 0.7);
-            backdrop-filter: saturate(180%) blur(20px);
+        
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
         }
     </style>
 </head>
-<body class="selection:bg-blue-500/30">
+<body class="antialiased selection:bg-white selection:text-black">
+    <div class="noise-overlay"></div>
 
-    <div class="glow top-[-100px] left-[-100px]"></div>
-    <div class="glow bottom-[-100px] right-[-100px]"></div>
-
-    <nav class="fixed top-0 w-full z-50 nav-blur border-b border-white/5">
-        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-            <span class="font-bold text-xl tracking-tighter">BLANK</span>
-            <div class="flex gap-6 text-sm font-medium text-slate-400">
-                <a href="https://www.tiktok.com/@blank9485" class="hover:text-white transition-colors"><i class="fab fa-tiktok mr-1"></i> TikTok</a>
-                <a href="https://github.com/Blank94855" class="hover:text-white transition-colors"><i class="fab fa-github mr-1"></i> GitHub</a>
+    <nav class="fixed top-0 w-full z-40 border-b border-white/5 bg-black/50 backdrop-blur-xl">
+        <div class="max-w-5xl mx-auto px-6 h-16 flex justify-between items-center">
+            <span class="font-grotesk font-bold text-xl tracking-tight">blank.</span>
+            <div class="flex gap-6 text-sm font-medium text-zinc-400">
+                <a href="https://www.tiktok.com/@blank9485" class="hover:text-white transition-colors">TikTok</a>
+                <a href="https://github.com/Blank94855" class="hover:text-white transition-colors">GitHub</a>
             </div>
         </div>
     </nav>
 
-    <main class="max-w-6xl mx-auto px-6 pt-32 pb-20">
+    <main class="max-w-5xl mx-auto px-6 pt-32 pb-24 relative z-10">
         
-        <header class="flex flex-col md:flex-row items-center gap-10 mb-20">
-            <div class="pfp-ring w-40 h-40 shrink-0 shadow-2xl shadow-blue-500/20">
-                <img src="https://i.ibb.co/Pz0cVxMr/pfp.jpg" alt="Blank" class="w-full h-full object-cover" onerror="this.src='https://ui-avatars.com/api/?name=B&background=3b82f6&color=fff'">
-            </div>
-            <div class="text-center md:text-left">
-                <h1 class="text-5xl md:text-7xl font-extrabold text-gradient tracking-tight mb-4 leading-tight">Blank.</h1>
-                <p class="text-lg md:text-xl text-slate-400 max-w-2xl leading-relaxed">
-                    hello!
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-6 mb-12">
+            <div class="md:col-span-8 flex flex-col justify-center">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-white/10 bg-white/5 w-fit mb-6">
+                    <span class="relative flex h-2 w-2">
+                      <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                      <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                    </span>
+                    <span class="text-xs font-medium text-zinc-400 uppercase tracking-wider">Online</span>
+                </div>
+                <h1 class="font-grotesk text-6xl md:text-8xl font-bold tracking-tighter mb-6 text-white text-glow">
+                    Blank.
+                </h1>
+                <p class="text-lg text-zinc-400 max-w-lg leading-relaxed">
+                    Tech enthusiast from Romania.
                 </p>
             </div>
-        </header>
-
-        <section class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-20">
-            <div class="glass-card p-8 flex flex-col items-center justify-center text-center">
-                <div class="tiktok-gradient text-4xl stats-number mb-1">35M+</div>
-                <div class="text-xs uppercase font-bold tracking-widest text-slate-500">TikTok Views</div>
-            </div>
-            <div class="glass-card p-8 flex flex-col items-center justify-center text-center">
-                <div class="text-4xl stats-number mb-1 text-white">85K+</div>
-                <div class="text-xs uppercase font-bold tracking-widest text-slate-500">Followers</div>
-            </div>
-            <div class="glass-card p-8 flex flex-col items-center justify-center text-center">
-                <div class="text-4xl stats-number mb-1 text-white">7M+</div>
-                <div class="text-xs uppercase font-bold tracking-widest text-slate-500">Total Likes</div>
-            </div>
-        </section>
-
-        <section id="communities" class="mb-20">
-            <div class="flex items-center gap-4 mb-10">
-                <h2 class="text-3xl font-bold">Communities I Moderate</h2>
-                <div class="h-px flex-1 bg-white/10"></div>
-            </div>
             
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <a href="https://www.reddit.com/r/Magisk/s/tE4kuEoWqt" target="_blank" class="glass-card p-6 flex flex-col h-full">
-                    <div class="flex justify-between items-start mb-4">
-                        <div class="w-10 h-10 bg-orange-500/10 rounded-xl flex items-center justify-center">
-                            <i class="fab fa-reddit-alien text-orange-500 text-xl"></i>
-                        </div>
-                        <span class="text-[10px] font-bold bg-white/5 px-2 py-1 rounded text-slate-400">30k+ USERS</span>
-                    </div>
-                    <h3 class="text-xl font-bold mb-2 text-white">r/magisk</h3>
-                    <p class="text-sm text-slate-400 leading-relaxed mb-6">the unofficial Magisk subreddit for Android root and systemless modules.</p>
-                    <div class="mt-auto text-xs font-bold text-orange-500 flex items-center gap-2 uppercase tracking-widest">View Subreddit <i class="fas fa-arrow-right text-[10px]"></i></div>
-                </a>
-
-                <a href="https://discord.gg/ypW6AU5Ymh" target="_blank" class="glass-card p-6 flex flex-col h-full">
-                    <div class="flex justify-between items-start mb-4">
-                        <div class="w-10 h-10 bg-blue-500/10 rounded-xl flex items-center justify-center">
-                            <i class="fab fa-discord text-blue-500 text-xl"></i>
-                        </div>
-                        <span class="text-[10px] font-bold bg-white/5 px-2 py-1 rounded text-slate-400">100+ MEMBERS</span>
-                    </div>
-                    <h3 class="text-xl font-bold mb-2 text-white">Techcore</h3>
-                    <p class="text-sm text-slate-400 leading-relaxed mb-6"> tech community made by me for tech support, chatting and etc..</p>
-                    <div class="mt-auto text-xs font-bold text-blue-500 flex items-center gap-2 uppercase tracking-widest">Join Discord <i class="fas fa-arrow-right text-[10px]"></i></div>
-                </a>
-
-                <a href="https://discord.gg/eJPBCfPzca" target="_blank" class="glass-card p-6 flex flex-col h-full">
-                    <div class="flex justify-between items-start mb-4">
-                        <div class="w-10 h-10 bg-purple-500/10 rounded-xl flex items-center justify-center">
-                            <i class="fab fa-discord text-purple-500 text-xl"></i>
-                        </div>
-                        <span class="text-[10px] font-bold bg-white/5 px-2 py-1 rounded text-slate-400">100+ MEMBERS</span>
-                    </div>
-                    <h3 class="text-xl font-bold mb-2 text-white">Brick 1100</h3>
-                    <p class="text-sm text-slate-400 leading-relaxed mb-6">Retro phone simulator.</p>
-                    <div class="mt-auto text-xs font-bold text-purple-500 flex items-center gap-2 uppercase tracking-widest">Join Discord <i class="fas fa-arrow-right text-[10px]"></i></div>
-                </a>
-
-                <a href="https://discord.gg/UN9MfRquCs" target="_blank" class="glass-card p-6 flex flex-col h-full">
-                    <div class="flex justify-between items-start mb-4">
-                        <div class="w-10 h-10 bg-emerald-500/10 rounded-xl flex items-center justify-center">
-                            <i class="fab fa-discord text-emerald-500 text-xl"></i>
-                        </div>
-                        <span class="text-[10px] font-bold bg-white/5 px-2 py-1 rounded text-slate-400">20+ MEMBERS</span>
-                    </div>
-                    <h3 class="text-xl font-bold mb-2 text-white">A14 stuffs</h3>
-                    <p class="text-sm text-slate-400 leading-relaxed mb-6">Retarted group for Galaxy A14 development</p>
-                    <div class="mt-auto text-xs font-bold text-emerald-500 flex items-center gap-2 uppercase tracking-widest">Join Discord <i class="fas fa-arrow-right text-[10px]"></i></div>
-                </a>
-            </div>
-        </section>
-
-        <section id="projects" class="mb-20">
-            <div class="flex items-center gap-4 mb-10">
-                <h2 class="text-3xl font-bold">Projects</h2>
-                <div class="h-px flex-1 bg-white/10"></div>
-            </div>
-            
-            <div class="glass-card p-8 md:p-12 relative overflow-hidden group">
-                <div class="absolute top-0 right-0 p-10 opacity-[0.03] group-hover:opacity-10 transition-opacity">
-                    <i class="fas fa-terminal text-[120px] text-white"></i>
+            <div class="md:col-span-4 flex items-center justify-center md:justify-end">
+                <div class="relative w-64 h-64 md:w-full md:h-full max-w-[300px] max-h-[300px] aspect-square rounded-[2rem] overflow-hidden border border-white/10 bg-zinc-900 group">
+                    <img src="https://i.ibb.co/Pz0cVxMr/pfp.jpg" alt="Profile" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 scale-105 group-hover:scale-100" onerror="this.src='https://ui-avatars.com/api/?name=B&background=18181b&color=fff'">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
                 </div>
-                <div class="relative z-10">
-                    <div class="flex items-center gap-3 mb-6">
-                        <div class="w-12 h-12 bg-white rounded-2xl flex items-center justify-center">
-                            <i class="fas fa-cat text-black text-2xl"></i>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-24">
+            <div class="bento-card p-6 rounded-3xl flex flex-col justify-between h-32 relative overflow-hidden group">
+                <div class="absolute top-0 right-0 w-24 h-24 bg-red-500/10 blur-[40px] rounded-full transition-opacity group-hover:opacity-100 opacity-0"></div>
+                <div class="text-zinc-500 text-sm font-medium uppercase tracking-wider">TikTok Views</div>
+                <div class="font-grotesk text-4xl font-bold text-white">36M+</div>
+            </div>
+            <div class="bento-card p-6 rounded-3xl flex flex-col justify-between h-32 relative overflow-hidden group">
+                <div class="absolute top-0 right-0 w-24 h-24 bg-blue-500/10 blur-[40px] rounded-full transition-opacity group-hover:opacity-100 opacity-0"></div>
+                <div class="text-zinc-500 text-sm font-medium uppercase tracking-wider">Followers</div>
+                <div class="font-grotesk text-4xl font-bold text-white">88K+</div>
+            </div>
+            <div class="bento-card p-6 rounded-3xl flex flex-col justify-between h-32 relative overflow-hidden group">
+                <div class="absolute top-0 right-0 w-24 h-24 bg-purple-500/10 blur-[40px] rounded-full transition-opacity group-hover:opacity-100 opacity-0"></div>
+                <div class="text-zinc-500 text-sm font-medium uppercase tracking-wider">Total Likes</div>
+                <div class="font-grotesk text-4xl font-bold text-white">7M+</div>
+            </div>
+        </div>
+
+        <section class="mb-24">
+            <h2 class="font-grotesk text-2xl font-bold mb-8 flex items-center gap-3">
+                <i class="fa-solid fa-users-line text-zinc-500"></i> Communities
+            </h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-4 auto-rows-[minmax(180px,auto)]">
+                
+                <a href="https://www.reddit.com/r/Magisk/s/tE4kuEoWqt" target="_blank" class="md:col-span-2 bento-card p-8 rounded-3xl relative overflow-hidden group flex flex-col justify-between">
+                    <div class="absolute inset-0 bg-gradient-to-br from-orange-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div class="relative z-10">
+                        <div class="flex justify-between items-start mb-4">
+                            <i class="fab fa-reddit-alien text-3xl text-orange-500"></i>
+                            <i class="fas fa-arrow-up-right-from-square text-zinc-600 group-hover:text-white transition-colors"></i>
                         </div>
-                        <h3 class="text-3xl font-bold text-white">CatNap</h3>
+                        <h3 class="font-grotesk text-2xl font-bold text-white mb-2">r/magisk</h3>
+                        <p class="text-zinc-400 text-sm">Unofficial subreddit for Android root & systemless modules.</p>
                     </div>
-                    <p class="text-lg text-slate-400 mb-8 max-w-2xl leading-relaxed">
-                        Modified fastfetch theme for Termux
-                    </p>
-                    <a href="https://github.com/Blank94855/termux-catnap-theme" target="_blank" class="inline-flex items-center gap-3 px-6 py-3 bg-white text-black font-bold rounded-2xl hover:bg-slate-200 transition-colors uppercase text-sm tracking-tight">
-                        <i class="fab fa-github text-lg"></i> View Repository
-                    </a>
+                    <div class="mt-4 inline-flex items-center gap-2 text-xs font-bold text-zinc-500 uppercase tracking-widest">30k+ Users</div>
+                </a>
+
+                <a href="https://discord.gg/ypW6AU5Ymh" target="_blank" class="md:col-span-2 bento-card p-8 rounded-3xl relative overflow-hidden group flex flex-col justify-between">
+                    <div class="absolute inset-0 bg-gradient-to-br from-indigo-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div class="relative z-10">
+                        <div class="flex justify-between items-start mb-4">
+                            <i class="fab fa-discord text-3xl text-indigo-500"></i>
+                            <i class="fas fa-arrow-up-right-from-square text-zinc-600 group-hover:text-white transition-colors"></i>
+                        </div>
+                        <h3 class="font-grotesk text-2xl font-bold text-white mb-2">Techcore</h3>
+                        <p class="text-zinc-400 text-sm">Tech support community & general chat.</p>
+                    </div>
+                    <div class="mt-4 inline-flex items-center gap-2 text-xs font-bold text-zinc-500 uppercase tracking-widest">100+ Members</div>
+                </a>
+
+                <a href="https://discord.gg/eJPBCfPzca" target="_blank" class="bento-card p-6 rounded-3xl relative overflow-hidden group flex flex-col justify-between">
+                    <div class="flex justify-between items-start">
+                        <i class="fas fa-mobile-retro text-2xl text-purple-500"></i>
+                        <span class="text-xs bg-white/5 px-2 py-1 rounded text-zinc-500">SIM</span>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-white mt-4">Brick 1100</h3>
+                        <p class="text-xs text-zinc-400 mt-1">Retro phone simulator.</p>
+                    </div>
+                </a>
+
+                <a href="https://discord.gg/UN9MfRquCs" target="_blank" class="bento-card p-6 rounded-3xl relative overflow-hidden group flex flex-col justify-between">
+                    <div class="flex justify-between items-start">
+                        <i class="fas fa-microchip text-2xl text-emerald-500"></i>
+                        <span class="text-xs bg-white/5 px-2 py-1 rounded text-zinc-500">DEV</span>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-white mt-4">A14 Stuffs</h3>
+                        <p class="text-xs text-zinc-400 mt-1">Galaxy A14 dev group.</p>
+                    </div>
+                </a>
+
+            </div>
+        </section>
+
+        <section class="mb-12">
+            <h2 class="font-grotesk text-2xl font-bold mb-8 flex items-center gap-3">
+                <i class="fa-solid fa-code text-zinc-500"></i> Projects
+            </h2>
+
+            <div class="bento-card rounded-3xl p-1 relative overflow-hidden group">
+                <div class="bg-zinc-900/50 p-8 md:p-12 rounded-[20px] h-full">
+                    <div class="flex flex-col md:flex-row gap-8 items-start md:items-center justify-between">
+                        <div class="relative z-10">
+                            <div class="w-12 h-12 bg-white text-black rounded-xl flex items-center justify-center mb-6 text-2xl">
+                                <i class="fas fa-cat"></i>
+                            </div>
+                            <h3 class="font-grotesk text-3xl font-bold text-white mb-3">CatNap</h3>
+                            <p class="text-zinc-400 max-w-xl leading-relaxed">
+                                A highly modified fastfetch theme designed specifically for Termux environments. Clean, fast, and aesthetically pleasing.
+                            </p>
+                        </div>
+                        <a href="https://github.com/Blank94855/termux-catnap-theme" class="px-6 py-3 bg-white text-black font-semibold rounded-xl hover:bg-zinc-200 transition-colors inline-flex items-center gap-2 whitespace-nowrap">
+                            <i class="fab fa-github"></i> View Repo
+                        </a>
+                    </div>
                 </div>
             </div>
         </section>
 
     </main>
 
-    <footer class="border-t border-white/5 py-12 text-center">
-        <div class="max-w-6xl mx-auto px-6">
-            <div class="flex justify-center gap-6 mb-8 text-2xl text-slate-400">
-                <a href="https://www.tiktok.com/@blank9485" class="hover:text-white transition-colors"><i class="fab fa-tiktok"></i></a>
-                <a href="https://github.com/Blank94855" class="hover:text-white transition-colors"><i class="fab fa-github"></i></a>
-            </div>
-            <p class="text-sm text-slate-500 font-medium tracking-tight">© Site made with Gemini 3.0 pro.</p>
+    <footer class="border-t border-white/5 py-12">
+        <div class="max-w-5xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+            <span class="font-grotesk font-bold text-xl tracking-tight text-zinc-600">Site made with <img id="" src="" alt="" />Gemini 3.0 pro.</span>
+            <p class="text-sm text-zinc-600">© 2025 Blank9485</p>
         </div>
     </footer>
 
 </body>
-                                                         </html>
+</html>
+
